@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Where the ISS at?</h1>
+    <p id='long'>longitude:</p>
+    
+    <p id='lat'>latitude:</p>
+    <script>
+        var displayToView = (elementId,text) =>{
+            document.getElementById(elementId).textContent =text;
+        }
+        const getJsonResponse = async (url) => {
+            var response = await fetch(url);
+            var jsonResponse = await response.json();
+            return jsonResponse;
+        };
+        const displayIssData = async (urlApi,getIss,displayStrat) => {
+            var issData = await getIss(urlApi);
+            if(issData != null){
+                displayStrat('lat',"Latittude: "+issData.latitude);
+                displayStrat('long',"Latittude: "+issData.longitude);
+            }
+        }
+        setInterval(async ()=>{await displayIssData("https://api.wheretheiss.at/v1/satellites/25544",getJsonResponse,displayToView)},1000);
+    </script>
+</body>
+</html>

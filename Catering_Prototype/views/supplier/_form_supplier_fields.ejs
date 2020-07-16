@@ -1,0 +1,18 @@
+<% if (messages.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= messages %>
+    </div>
+  <% } %>
+
+<div class="form-group">
+    <label for="name">Name</label>
+    <input required type = "text" value="<%=supplier.name%>" name="name" id="name" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="address">Address</label>
+    <textarea name="address" id="address" class="form-control"><%=supplier.address%></textarea>
+</div>
+
+<a href="/supplier" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Save</button>

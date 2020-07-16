@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class=" d-flex justify-content-between mt-4 title">
+        <h1>Suppliers</h1>
+        <a href = "" class = "btn-new-supplier mt-2 btn btn-success">New Supplier</a>
+    
+    </div>
+    <div class="new-form card mt-4">
+        <div class="card-body">
+            <form class="new-supplier-form-data" action="/supplier" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input required type = "text" name="name" id="name" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea name="address" id="address" class="form-control"></textarea>
+                </div>
+                <a href="" class="btn-new-supplier-cancel btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>       
+    </div>
+    <div class=" mt-4 suppliers">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
